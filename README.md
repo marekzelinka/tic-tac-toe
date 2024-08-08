@@ -1,6 +1,6 @@
 # Tic-tac-toe
 
-This project is a simple clone of tic-tac-toe. Created to practice [React](https://react.dev/) components. I've deployed this project on [Netlify](https://www.netlify.com/).
+This project is a simple clone of tic-tac-toe. Created to practice [React](https://react.dev/) components. I've deployed this project on [Vercel](https://vercel.com/).
 
 ## Credits
 
