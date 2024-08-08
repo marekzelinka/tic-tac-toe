@@ -5,7 +5,9 @@ export function Status({ xIsNext, squares }) {
   const winner = calculateWinner(squares)
   const status = winner
     ? `Winner: ${winner}`
-    : `Next player: ${xIsNext ? 'X' : 'O'}`
+    : squares.every(Boolean)
+      ? 'Draw'
+      : `Next player: ${xIsNext ? 'X' : 'O'}`
 
   return <div className="status">{status}</div>
 }
