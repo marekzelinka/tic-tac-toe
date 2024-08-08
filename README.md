@@ -1,8 +1,7 @@
-# React + Vite
+# Tic-tac-toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple clone of tic-tac-toe. Created to practice [React](https://react.dev/) components. I've deployed this project on [Netlify](https://www.netlify.com/).
 
-Currently, two official plugins are available:
+## Credits
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/tic-tac-toe-game-Re7ZF_E2v)

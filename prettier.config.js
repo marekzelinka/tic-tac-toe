@@ -6,5 +6,5 @@ export default {
   semi: false,
   singleQuote: true,
   trailingComma: 'all',
-  plugins: ['prettier-plugin-organize-imports'],
+  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
 }
