@@ -3,11 +3,19 @@ import { useState } from 'react'
 export default function Game() {
   const [xIsNext, setXIsNext] = useState(true)
   const [history, setHistory] = useState([Array(9).fill(null)])
-  const currentSquares = history[history.length - 1]
+  const [currentMove, setCurrentMove] = useState(0)
+  const currentSquares = history[currentMove]
 
   const handlePlay = (nextSquares) => {
-    setHistory([...history, nextSquares])
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares]
+    setHistory(nextHistory)
+    setCurrentMove(nextHistory.length - 1)
     setXIsNext((xIsNext) => !xIsNext)
+  }
+
+  const jumpTo = (nextMove) => {
+    setCurrentMove(nextMove)
+    setXIsNext(nextMove % 2 === 0)
   }
 
   return (
@@ -16,7 +24,15 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
-        <ol>{/* TODO */}</ol>
+        <ol>
+          {history.map((_squares, move) => (
+            <li key={move}>
+              <button type="button" onClick={() => jumpTo(move)}>
+                {move > 0 ? `Go to move #${move}` : 'Go to game start'}
+              </button>
+            </li>
+          ))}
+        </ol>
       </div>
     </div>
   )
