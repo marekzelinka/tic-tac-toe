@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 export default function Game() {
@@ -48,7 +49,7 @@ function Board({ xIsNext, squares, onPlay }) {
     }
 
     const nextSquares = squares.slice()
-    nextSquares[i] = xIsNext ? 'X' : '0'
+    nextSquares[i] = xIsNext ? 'X' : 'O'
     onPlay(nextSquares)
   }
 
@@ -73,6 +74,11 @@ function Board({ xIsNext, squares, onPlay }) {
     </>
   )
 }
+Board.propTypes = {
+  xIsNext: PropTypes.bool.isRequired,
+  squares: PropTypes.arrayOf(PropTypes.oneOf(['X', 'O', null])).isRequired,
+  onPlay: PropTypes.func.isRequired,
+}
 
 function Square({ value, onClick }) {
   return (
@@ -80,6 +86,10 @@ function Square({ value, onClick }) {
       {value}
     </button>
   )
+}
+Square.propTypes = {
+  value: PropTypes.oneOf(['X', 'O', null]),
+  onClick: PropTypes.func.isRequired,
 }
 
 function calculateWinner(squares) {
