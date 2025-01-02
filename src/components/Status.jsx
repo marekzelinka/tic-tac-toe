@@ -11,7 +11,7 @@ export function Status({ xIsNext, squares }) {
       {winner ? (
         <>
           Winner:
-          {winner === "X" ? (
+          {winner.player === "X" ? (
             <PlayerX className="size-4 fill-teal-400" />
           ) : (
             <PlayerO className="size-4 fill-amber-400" />
