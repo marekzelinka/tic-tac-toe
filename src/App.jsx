@@ -35,7 +35,7 @@ export default function Game() {
             <button
               type="button"
               onClick={handleRestart}
-              className="inline-flex items-center gap-2 rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-white/10 dark:text-white dark:ring-0 dark:hover:bg-white/20"
+              className="inline-flex items-center gap-2 rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 dark:bg-white/10 dark:text-white dark:ring-0 dark:hover:bg-white/20"
             >
               <ArrowPathIcon className="size-4 text-gray-400 dark:text-white/60" />
               Restart
@@ -50,10 +50,10 @@ export default function Game() {
           </div>
           <div className="md:col-span-2 md:row-span-2 md:row-end-2 md:h-full">
             <details className="group md:hidden">
-              <summary className="select-none text-sm/6 font-semibold text-gray-900 dark:text-white">
+              <summary className="text-sm/6 font-semibold text-gray-900 select-none dark:text-white">
                 History
               </summary>
-              <div className="mt-4 h-96 overflow-y-auto rounded-xl bg-white shadow-sm ring-1 ring-gray-900/5 dark:bg-gray-950 dark:ring-white/10">
+              <div className="mt-4 h-96 overflow-y-auto rounded-xl bg-white ring-1 shadow-xs ring-gray-900/5 dark:bg-gray-950 dark:ring-white/10">
                 <History
                   history={history}
                   currentMove={currentMove}
@@ -65,7 +65,7 @@ export default function Game() {
               <div className="pt-1 text-sm/6 font-semibold text-gray-900 dark:text-white">
                 History
               </div>
-              <div className="mt-5 flex-1 overflow-y-auto rounded-xl bg-white shadow-sm ring-1 ring-gray-900/5 dark:bg-gray-950 dark:ring-white/10">
+              <div className="mt-5 flex-1 overflow-y-auto rounded-xl bg-white ring-1 shadow-xs ring-gray-900/5 dark:bg-gray-950 dark:ring-white/10">
                 <History
                   history={history}
                   currentMove={currentMove}

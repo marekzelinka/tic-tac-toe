@@ -10,12 +10,12 @@ export function Square({ value, xIsNext, disabled, highlighted, onClick }) {
       disabled={disabled}
       onClick={onClick}
       className={clsx(
-        "group flex h-36 items-center justify-center rounded-lg shadow-sm",
+        "group flex h-36 items-center justify-center rounded-lg shadow-xs",
         highlighted
           ? value === "X"
             ? "bg-teal-400"
             : "bg-amber-400"
-          : "bg-white ring-1 ring-inset ring-gray-300 hover:enabled:bg-gray-50 dark:bg-white/10 dark:ring-0 dark:hover:enabled:bg-white/20",
+          : "bg-white ring-1 ring-gray-300 ring-inset hover:enabled:bg-gray-50 dark:bg-white/10 dark:ring-0 dark:hover:enabled:bg-white/20",
       )}
       aria-label={value !== null ? `Player ${value}` : "Empty"}
     >
@@ -34,9 +34,9 @@ export function Square({ value, xIsNext, disabled, highlighted, onClick }) {
           )}
         />
       ) : xIsNext ? (
-        <PlayerX className="size-12 fill-transparent stroke-teal-400 stroke-2 opacity-0 group-hover:group-enabled:opacity-100" />
+        <PlayerX className="size-12 fill-transparent stroke-teal-400 stroke-2 opacity-0 group-enabled:group-hover:opacity-100" />
       ) : (
-        <PlayerO className="size-12 fill-transparent stroke-amber-400 stroke-2 opacity-0 group-hover:group-enabled:opacity-100" />
+        <PlayerO className="size-12 fill-transparent stroke-amber-400 stroke-2 opacity-0 group-enabled:group-hover:opacity-100" />
       )}
     </button>
   );
