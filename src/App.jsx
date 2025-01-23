@@ -27,7 +27,7 @@ export default function Game() {
   };
 
   return (
-    <main className="isolate flex min-h-svh flex-col justify-center bg-gray-100 px-6 py-10 lg:px-8 dark:bg-gray-900">
+    <main className="isolate flex min-h-svh flex-col justify-center bg-gray-50 px-6 py-10 lg:px-8 dark:bg-gray-900">
       <div className="mx-auto mt-10 w-full max-w-md md:max-w-3xl">
         <div className="grid grid-cols-1 grid-rows-1 items-start gap-x-8 gap-y-6 md:grid-cols-5 md:gap-y-4">
           <div className="flex items-center justify-between md:col-span-3 md:col-start-1 md:row-end-1">
