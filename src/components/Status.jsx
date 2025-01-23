@@ -7,7 +7,7 @@ export function Status({ xIsNext, squares }) {
   const winner = calculateWinner(squares);
 
   return (
-    <div className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium text-gray-900 ring-1 ring-inset ring-gray-200 dark:text-white dark:ring-gray-800">
+    <div className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium text-gray-900 ring-1 ring-gray-200 ring-inset dark:text-white dark:ring-gray-800">
       {winner ? (
         <>
           Winner:
