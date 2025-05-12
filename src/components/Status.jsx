@@ -7,26 +7,30 @@ export function Status({ xIsNext, squares }) {
   const winner = calculateWinner(squares);
 
   return (
-    <div className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium text-gray-900 ring-1 ring-gray-200 ring-inset dark:text-white dark:ring-gray-800">
+    <div
+      role="status"
+      className="inline-flex items-center gap-1.5 rounded-md bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 uppercase ring-1 ring-gray-500/20 ring-inset dark:bg-gray-400/10 dark:text-gray-400 dark:ring-gray-400/20"
+      aria-label="Current player's turn"
+    >
       {winner ? (
         <>
-          Winner:
           {winner.player === "X" ? (
             <PlayerX className="size-3.5 fill-teal-400" />
           ) : (
             <PlayerO className="size-3.5 fill-amber-400" />
           )}
+          Won
         </>
       ) : squares.every(Boolean) ? (
         "Scratch: Cat's game"
       ) : (
         <>
-          Next player:
           {xIsNext ? (
             <PlayerX className="size-3.5 fill-teal-400" />
           ) : (
             <PlayerO className="size-3.5 fill-amber-400" />
           )}
+          Turn
         </>
       )}
     </div>

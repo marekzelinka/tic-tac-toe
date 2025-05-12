@@ -13,7 +13,7 @@ export function Board({ xIsNext, squares, onPlay }) {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-5">
+    <div className="grid grid-cols-3 gap-5" aria-label="Tic Tac Toe game board">
       {squares.map((square, i) => {
         const highlighted = winner?.lines.includes(i) ?? false;
         const filled = square !== null;

@@ -17,6 +17,7 @@ export function Square({ value, xIsNext, disabled, highlighted, onClick }) {
             : "bg-amber-400"
           : "bg-white ring-1 ring-gray-300 ring-inset hover:enabled:bg-gray-50 dark:bg-white/10 dark:ring-0 dark:hover:enabled:bg-white/20",
       )}
+      aria-pressed={disabled}
       aria-label={value !== null ? `Player ${value}` : "Empty"}
     >
       {value === "X" ? (
