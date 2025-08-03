@@ -1,31 +1,33 @@
 import { ArrowPathIcon } from "@heroicons/react/16/solid";
-import { useState } from "react";
 import { Board } from "./components/Board.jsx";
 import { History } from "./components/History.jsx";
 import { PlayerO } from "./components/PlayerO.jsx";
 import { PlayerX } from "./components/PlayerX.jsx";
 import { Status } from "./components/Status.jsx";
+import { useGameStore } from "./store.js";
 
 export default function Game() {
-  const [history, setHistory] = useState([Array(9).fill(null)]);
-  const [currentMove, setCurrentMove] = useState(0);
+  const history = useGameStore((state) => state.history);
+  const setHistory = useGameStore((state) => state.setHistory);
+  const currentMove = useGameStore((state) => state.currentMove);
+  const setCurrentMove = useGameStore((state) => state.setCurrentMove);
+  const reset = useGameStore((state) => state.reset);
 
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
-  const handlePlay = (nextSquares) => {
+  function handlePlay(nextSquares) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
-  };
+  }
 
-  const handleJump = (nextMove) => {
+  function handleJump(nextMove) {
     setCurrentMove(nextMove);
-  };
+  }
 
   const handleRestart = () => {
-    setHistory([Array(9).fill(null)]);
-    setCurrentMove(0);
+    reset();
   };
 
   return (
