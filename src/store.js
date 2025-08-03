@@ -7,7 +7,7 @@ export const useGameStore = create(
       history: [Array(9).fill(null)],
       currentMove: 0,
     },
-    (set) => ({
+    (set, _get, store) => ({
       setHistory: (nextHistory) => {
         set((state) => ({
           history:
@@ -25,10 +25,7 @@ export const useGameStore = create(
         }));
       },
       reset: () => {
-        set(() => ({
-          history: [Array(9).fill(null)],
-          currentMove: 0,
-        }));
+        set(store.getInitialState());
       },
     }),
   ),
