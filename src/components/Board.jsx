@@ -4,11 +4,16 @@ import { Square } from "./Square.jsx";
 
 export function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
+  const player = xIsNext ? "X" : "O";
   const canPlay = !winner && !squares.every(Boolean);
 
   const handleSquareClick = (i) => {
+    if (squares[i] || winner) {
+      return;
+    }
+
     const nextSquares = squares.slice();
-    nextSquares[i] = xIsNext ? "X" : "O";
+    nextSquares[i] = player;
     onPlay(nextSquares);
   };
 
