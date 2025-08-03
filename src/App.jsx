@@ -72,7 +72,7 @@ export default function Game() {
               <div className="pt-1 text-sm/6 font-semibold text-gray-900 dark:text-white">
                 History
               </div>
-              <div className="mt-5 h-[472px] flex-1 overflow-y-auto rounded-xl bg-white shadow-xs ring-1 ring-gray-900/5 dark:bg-gray-950 dark:ring-white/10">
+              <div className="mt-5 h-[472px] overflow-y-auto rounded-xl bg-white shadow-xs ring-1 ring-gray-900/5 dark:bg-gray-950 dark:ring-white/10">
                 <History
                   history={history}
                   currentMove={currentMove}
